@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teut Operational Services — Defence &amp; Security Procurement Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:       #1C2B4A;
+  --navy-dark:  #111E35;
+  --navy-mid:   #243459;
+  --navy-light: #2E4170;
+  --gold:       #B8960C;
+  --gold-mid:   #C9A832;
+  --white:      #FFFFFF;
+  --off-white:  #F7F6F3;
+  --text-body:  #2C2C2A;
+  --text-muted: #6B6860;
+  --text-light: #9A9790;
+  --border:     #D0CEC7;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--white);
+  color: var(--text-body);
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* ─── UTILITY ─── */
+.inner { max-width: 1160px; margin: 0 auto; padding: 0 3rem; }
+.gold-rule { display: block; width: 40px; height: 2px; background: var(--gold); margin: 1.2rem 0; }
+.section-pad { padding: 6rem 0; }
+.section-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--gold); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;
+}
+.section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+.section-title {
+  font-family: 'EB Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 500; color: var(--navy-dark); line-height: 1.2; letter-spacing: 0.01em;
+}
+.section-title.light { color: var(--white); }
+
+/* ─── TOP BAR ─── */
+.topbar {
+  background: var(--navy-dark);
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(184,150,12,0.3);
+}
+.topbar .inner { display: flex; justify-content: space-between; align-items: center; }
+.topbar-left {
+  font-size: 11px; font-weight: 300; letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.45); text-transform: uppercase;
+}
+.topbar-right { font-size: 11px; font-weight: 300; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); }
+.topbar-right a { color: rgba(184,150,12,0.85); text-decoration: none; }
+
+/* ─── NAV ─── */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: var(--white); border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px; max-width: 1160px; margin: 0 auto; padding: 0 3rem;
+}
+.nav-logo { display: flex; align-items: center; gap: 1.1rem; text-decoration: none; }
+.nav-logo img { height: 44px; width: auto; }
+.nav-wordmark { border-left: 1px solid var(--border); padding-left: 1.1rem; }
+.nav-wordmark strong {
+  display: block; font-family: 'EB Garamond', serif; font-size: 15px;
+  font-weight: 500; color: var(--navy-dark); letter-spacing: 0.04em; line-height: 1.2;
+}
+.nav-wordmark span {
+  display: block; font-size: 10px; font-weight: 300; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--text-muted); margin-top: 2px;
+}
+.nav-links { display: flex; align-items: center; list-style: none; height: 100%; }
+.nav-links li { height: 100%; display: flex; align-items: center; }
+.nav-links a {
+  display: flex; align-items: center; height: 100%; padding: 0 1.25rem;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--text-body); text-decoration: none;
+  border-bottom: 3px solid transparent; transition: color 0.2s, border-color 0.2s;
+}
+.nav-links a:hover { color: var(--navy); border-bottom-color: var(--gold); }
+.nav-links .nav-engage a {
+  background: var(--navy); color: var(--white); margin-left: 1rem;
+  padding: 0 1.5rem; height: 38px; border-bottom: none; font-size: 11px;
+}
+.nav-links .nav-engage a:hover { background: var(--navy-mid); }
+
+/* ─── HERO ─── */
+#hero {
+  background: var(--navy-dark);
+  position: relative; overflow: hidden;
+  min-height: 88vh; display: flex; flex-direction: column;
+}
+
+/*
+  HERO BACKGROUND IMAGE
+  To add a background photo (recommended: military operations room, command centre,
+  or aerial airfield/convoy shot — landscape, min 1600px wide):
+  1. Place your image file in the same folder as index.html
+  2. Replace the solid background on #hero above with:
+     background: var(--navy-dark);
+  3. Add inside .hero-image-area: <img src="your-photo.jpg" alt="">
+  The overlay gradient (.hero-overlay) will darken it automatically.
+*/
+.hero-image-area { position: absolute; inset: 0; z-index: 0; }
+.hero-image-area img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center; opacity: 0.28; display: block;
+}
+
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    to right,
+    rgba(17,30,53,0.97) 0%,
+    rgba(17,30,53,0.88) 45%,
+    rgba(17,30,53,0.45) 100%
+  );
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; justify-content: center;
+  flex: 1; padding: 6rem 0 5rem;
+}
+
+.hero-inner {
+  max-width: 1160px; margin: 0 auto; padding: 0 3rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+}
+
+.hero-eagle-wrap {
+  text-align: center; padding: 2.5rem;
+  border: 1px solid rgba(184,150,12,0.2); display: inline-block;
+}
+.hero-eagle-wrap img { width: min(300px, 90%); height: auto; display: block; margin: 0 auto; }
+
+.hero-category {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--gold-mid); margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.hero-category::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
+
+.hero-title {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 500;
+  color: var(--white); line-height: 1.2; letter-spacing: 0.01em; margin-bottom: 1.5rem;
+}
+
+.hero-body {
+  font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.65);
+  line-height: 1.85; margin-bottom: 2rem; max-width: 460px;
+}
+
+/* Hero horizontal features */
+.hero-features {
+  display: flex; gap: 0; margin-bottom: 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 1.25rem 0;
+}
+.hero-feature {
+  flex: 1; padding-right: 1.5rem; margin-right: 1.5rem;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.hero-feature:last-child { border-right: none; padding-right: 0; margin-right: 0; }
+.hero-feature-val {
+  display: block; font-family: 'EB Garamond', serif;
+  font-size: 1.6rem; font-weight: 500; color: var(--white); line-height: 1; margin-bottom: 0.3rem;
+}
+.hero-feature-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4);
+}
+
+.hero-cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn {
+  display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.22em;
+  text-transform: uppercase; text-decoration: none; padding: 0.85rem 2rem;
+  cursor: pointer; border: none; transition: all 0.2s ease;
+}
+.btn-navy { background: var(--navy-mid); color: var(--white); border: 1px solid var(--navy-mid); }
+.btn-navy:hover { background: var(--navy-light); border-color: var(--navy-light); }
+.btn-outline { background: transparent; color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.3); }
+.btn-outline:hover { border-color: rgba(255,255,255,0.7); color: var(--white); }
+
+/* ─── PRODUCT BAND ─── */
+.product-band {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 0; border-top: 3px solid var(--navy-dark);
+}
+.product-cell {
+  position: relative; height: 220px; overflow: hidden;
+  background: var(--navy-mid); cursor: default;
+}
+.product-cell img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  opacity: 0.6; transition: opacity 0.4s, transform 0.6s;
+}
+.product-cell:hover img { opacity: 0.8; transform: scale(1.04); }
+.product-cell-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(17,30,53,0.92) 0%, rgba(17,30,53,0.3) 60%, transparent 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 1rem 0.9rem; transition: background 0.3s;
+}
+.product-cell:hover .product-cell-overlay {
+  background: linear-gradient(to top, rgba(17,30,53,0.97) 0%, rgba(17,30,53,0.5) 70%, transparent 100%);
+}
+.product-cell-title {
+  font-family: 'EB Garamond', serif; font-size: 0.85rem; font-weight: 500;
+  color: var(--white); line-height: 1.25; margin-bottom: 0.3rem;
+}
+.product-cell-sub {
+  font-size: 8px; font-weight: 600; letter-spacing: 0.25em;
+  text-transform: uppercase; color: rgba(184,150,12,0.85);
+}
+/* Placeholder for cells without images */
+.product-ph {
+  width: 100%; height: 100%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 0.6rem;
+  background: var(--navy-mid);
+}
+.product-ph .ph-icon { width: 32px; height: 32px; opacity: 0.2; }
+.product-ph .ph-icon svg { width: 100%; height: 100%; stroke: var(--white); fill: none; stroke-width: 1; }
+.product-ph .ph-note {
+  font-size: 8px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(255,255,255,0.18); text-align: center; padding: 0 0.5rem; line-height: 1.6;
+}
+
+/* ─── ABOUT ─── */
+#about { background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.about-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 6rem; align-items: start; }
+.about-body-text p { font-size: 0.97rem; color: var(--text-body); line-height: 1.9; margin-bottom: 1.2rem; }
+.about-body-text p:last-child { margin-bottom: 0; }
+.mission-block {
+  margin-top: 2.5rem; padding: 1.75rem 2rem;
+  border-left: 3px solid var(--navy); background: var(--white);
+  border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.mission-block blockquote {
+  font-family: 'EB Garamond', serif; font-size: 1.05rem;
+  font-style: italic; color: var(--navy-dark); line-height: 1.85;
+}
+.about-seal { width: 100%; max-width: 260px; height: auto; display: block; margin: 0 auto 2.5rem; }
+.credentials-list { list-style: none; display: flex; flex-direction: column; }
+.credentials-list li {
+  display: flex; align-items: center; gap: 1rem; padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border); font-size: 0.9rem; color: var(--text-body);
+}
+.credentials-list li:first-child { border-top: 1px solid var(--border); }
+.cred-dot { width: 5px; height: 5px; background: var(--navy); flex-shrink: 0; }
+
+/* ─── CAPABILITIES ─── */
+#capabilities { background: var(--white); }
+.cap-header { margin-bottom: 3.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid var(--border); }
+.cap-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0; border: 1px solid var(--border);
+}
+.cap-card {
+  padding: 2.5rem 2rem 2rem; border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border); transition: background 0.2s;
+}
+.cap-card:hover { background: var(--off-white); }
+.cap-card:nth-child(3), .cap-card:nth-child(6) { border-right: none; }
+.cap-card:nth-child(4), .cap-card:nth-child(5), .cap-card:nth-child(6) { border-bottom: none; }
+.cap-num {
+  font-family: 'EB Garamond', serif; font-size: 3rem; font-weight: 400;
+  color: rgba(28,43,74,0.07); line-height: 1; margin-bottom: 1rem; display: block;
+}
+.cap-title {
+  font-family: 'EB Garamond', serif; font-size: 1.15rem; font-weight: 500;
+  color: var(--navy-dark); margin-bottom: 0.75rem; line-height: 1.3;
+}
+.cap-text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1rem; }
+.cap-items {
+  list-style: none; display: flex; flex-direction: column; gap: 0.3rem;
+  padding-top: 0.75rem; border-top: 1px solid var(--border);
+}
+.cap-items li {
+  font-size: 0.82rem; color: var(--text-light); padding-left: 0.85rem;
+  position: relative; line-height: 1.6;
+}
+.cap-items li::before {
+  content: ''; position: absolute; left: 0; top: 0.6em;
+  width: 4px; height: 1px; background: var(--gold);
+}
+
+/* ─── GEOGRAPHY ─── */
+#geography { background: var(--navy-dark); }
+.geo-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: start; }
+.geo-body { font-size: 0.97rem; color: rgba(255,255,255,0.6); line-height: 1.9; margin-top: 1.5rem; }
+.geo-regions-wrap { margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.geo-region-item {
+  padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: flex; align-items: center; gap: 0.85rem;
+}
+.geo-region-item:nth-child(odd) { padding-right: 1.5rem; }
+.geo-region-item:nth-child(even) { padding-left: 1.5rem; border-left: 1px solid rgba(255,255,255,0.07); }
+.geo-dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+.geo-region-name { font-size: 0.85rem; color: rgba(255,255,255,0.75); }
+.geo-image-block { position: relative; height: 460px; overflow: hidden; }
+.geo-image-block img { width: 100%; height: 100%; object-fit: cover; opacity: 0.55; display: block; }
+.geo-image-block .geo-ph {
+  width: 100%; height: 100%; background: var(--navy-mid);
+  display: flex; align-items: center; justify-content: center;
+}
+.geo-image-block .geo-ph span {
+  font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(255,255,255,0.18); text-align: center; padding: 0 2rem;
+}
+
+/* ─── HOW WE WORK ─── */
+#approach { background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.approach-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 3.5rem; border: 1px solid var(--border); }
+.principle-card {
+  padding: 2.5rem 2rem; border-right: 1px solid var(--border); transition: background 0.2s;
+  position: relative;
+}
+.principle-card:last-child { border-right: none; }
+.principle-card:hover { background: var(--white); }
+.principle-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 100%;
+  height: 2px; background: var(--gold); transition: right 0.5s ease;
+}
+.principle-card:hover::before { right: 0; }
+.principle-num {
+  font-family: 'EB Garamond', serif; font-size: 2.5rem; font-weight: 400;
+  color: rgba(28,43,74,0.07); line-height: 1; margin-bottom: 1.25rem; display: block;
+}
+.principle-title {
+  font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 500;
+  color: var(--navy-dark); margin-bottom: 0.75rem; line-height: 1.3;
+}
+.principle-text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; }
+
+/* ─── CONTACT ─── */
+#contact { background: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 6rem; align-items: start; }
+.contact-intro {
+  font-family: 'EB Garamond', serif; font-size: 1.05rem; font-style: italic;
+  color: var(--text-muted); line-height: 1.9; margin-top: 1.5rem;
+}
+.contact-details { margin-top: 2.5rem; display: flex; flex-direction: column; }
+.contact-item {
+  display: flex; align-items: flex-start; gap: 1.25rem;
+  padding: 1.25rem 0; border-bottom: 1px solid var(--border);
+}
+.contact-item:first-child { border-top: 1px solid var(--border); }
+.contact-icon { width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px; }
+.contact-icon svg { width: 100%; height: 100%; stroke: var(--navy); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.contact-label {
+  display: block; font-size: 9px; font-weight: 600; letter-spacing: 0.35em;
+  text-transform: uppercase; color: var(--text-light); margin-bottom: 0.3rem;
+}
+.contact-val { font-size: 0.92rem; color: var(--text-body); }
+.contact-val a { color: var(--navy); text-decoration: none; transition: color 0.2s; }
+.contact-val a:hover { color: var(--gold); }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.form-group input, .form-group select, .form-group textarea {
+  border: 1px solid var(--border); background: var(--off-white); color: var(--text-body);
+  font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem; font-weight: 400;
+  padding: 0.75rem 1rem; outline: none; border-radius: 0;
+  -webkit-appearance: none; appearance: none; transition: border-color 0.2s, background 0.2s;
+}
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%231C2B4A' stroke-width='1.2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 0.9rem center; padding-right: 2.2rem; cursor: pointer;
+}
+.form-group select option { background: var(--white); color: var(--text-body); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--navy); background: var(--white); }
+.form-group textarea { resize: vertical; min-height: 110px; }
+.form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-light); }
+.form-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 0.5rem; }
+.form-fine { font-size: 0.78rem; color: var(--text-light); font-style: italic; font-family: 'EB Garamond', serif; }
+.btn-submit {
+  font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--white);
+  background: var(--navy); border: none; padding: 0.85rem 2rem; cursor: pointer; transition: background 0.2s;
+}
+.btn-submit:hover { background: var(--navy-light); }
+#form-success {
+  display: none; font-family: 'EB Garamond', serif; font-style: italic; font-size: 0.95rem;
+  color: var(--navy); border-left: 3px solid var(--navy); padding: 0.75rem 1rem;
+  background: var(--off-white); margin-top: 0.5rem;
+}
+
+/* ─── FOOTER ─── */
+footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.25); }
+.footer-main {
+  max-width: 1160px; margin: 0 auto; padding: 3rem;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem;
+}
+.footer-brand img { height: 36px; width: auto; margin-bottom: 1rem; opacity: 0.9; }
+.footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.8; max-width: 280px; }
+.footer-col-title { font-size: 10px; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 1.25rem; }
+.footer-col-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-col-links a { font-size: 0.88rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-col-links a:hover { color: rgba(255,255,255,0.9); }
+.footer-bottom {
+  max-width: 1160px; margin: 0 auto; padding: 1.25rem 3rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.25); letter-spacing: 0.05em; }
+
+/* ─── REVEAL ─── */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .inner, .nav-inner, .hero-inner, .footer-main, .footer-bottom { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-eagle-wrap { display: none; }
+  .hero-features { flex-wrap: wrap; gap: 1.25rem; }
+  .hero-feature { flex: 1 1 40%; border-right: none; padding-right: 0; margin-right: 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem; }
+  .product-band { grid-template-columns: repeat(3, 1fr); }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .cap-grid { grid-template-columns: repeat(2, 1fr); }
+  .cap-card:nth-child(3) { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .cap-card:nth-child(2), .cap-card:nth-child(4), .cap-card:nth-child(6) { border-right: none; }
+  .cap-card:nth-child(5), .cap-card:nth-child(6) { border-bottom: none; }
+  .geo-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .geo-image-block { height: 300px; }
+  .approach-grid { grid-template-columns: repeat(2, 1fr); }
+  .principle-card:nth-child(2) { border-right: none; }
+  .principle-card:nth-child(3) { border-top: 1px solid var(--border); }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-main { grid-template-columns: 1fr; gap: 2rem; }
+}
+@media (max-width: 640px) {
+  .topbar { display: none; }
+  .nav-links { display: none; }
+  .product-band { grid-template-columns: repeat(2, 1fr); }
+  .cap-grid { grid-template-columns: 1fr; }
+  .cap-card:nth-child(n) { border-right: none; border-bottom: 1px solid var(--border); }
+  .cap-card:last-child { border-bottom: none; }
+  .approach-grid { grid-template-columns: 1fr; }
+  .principle-card { border-right: none; border-bottom: 1px solid var(--border); }
+  .principle-card:last-child { border-bottom: none; }
+  .form-row { grid-template-columns: 1fr; }
+  .form-footer { flex-direction: column; align-items: flex-start; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .geo-regions-wrap { grid-template-columns: 1fr; }
+  .geo-region-item:nth-child(even) { padding-left: 0; border-left: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="inner">
+    <span class="topbar-left">Defence &amp; Security Procurement Solutions</span>
+    <span class="topbar-right">Secure contact: <a href="mailto:teut.os@protonmail.com">teut.os@protonmail.com</a></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="TOS_logo_1.png" alt="TOS">
+      <div class="nav-wordmark">
+        <strong>Teut Operational Services</strong>
+        <span>Defence &amp; Security Procurement</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#capabilities">Procurement</a></li>
+      <li><a href="#geography">Coverage</a></li>
+      <li><a href="#approach">Our Approach</a></li>
+      <li class="nav-engage"><a href="#contact">Engage TOS</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-image-area">
+    <!--
+      HERO BACKGROUND PHOTO
+      Recommended: military operations room, command centre, or airfield/convoy aerial shot.
+      Format: landscape, minimum 1600px wide.
+      To add: replace this comment with <img src="your-photo.jpg" alt="">
+      The dark gradient overlay (.hero-overlay) will apply automatically.
+    -->
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-eagle-wrap">
+          <img src="Gemini_eagle_1.png" alt="Teut Operational Services">
+        </div>
+      </div>
+      <div class="hero-right">
+        <p class="hero-category">Teut Operational Services</p>
+        <h1 class="hero-title">Defence &amp; Security Procurement Solutions</h1>
+        <p class="hero-body">TOS is a specialist government procurement partner — connecting defence ministries and institutional clients with verified global supply chains for the full spectrum of defence and security equipment requirements.</p>
+        <div class="hero-features">
+          <div class="hero-feature">
+            <span class="hero-feature-val">40+</span>
+            <span class="hero-feature-label">Countries of Operation</span>
+          </div>
+          <div class="hero-feature">
+            <span class="hero-feature-val">100%</span>
+            <span class="hero-feature-label">Compliance-Led</span>
+          </div>
+          <div class="hero-feature">
+            <span class="hero-feature-val">E2E</span>
+            <span class="hero-feature-label">End-to-End Delivery</span>
+          </div>
+        </div>
+        <div class="hero-cta-row">
+          <a href="#capabilities" class="btn btn-navy">Procurement Capabilities</a>
+          <a href="#contact" class="btn btn-outline">Engage TOS</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT BAND -->
+<div class="product-band">
+
+  <!-- CELL 1: Armoured Vehicles -->
+  <div class="product-cell">
+    <!--
+      PRODUCT IMAGE 1 — Armoured Vehicles
+      Replace with: <img src="armoured-vehicles.jpg" alt="Armoured Vehicles">
+      Suggested: APC lineup, MRAP formation, armoured convoy, IFV on range.
+    -->
+    <div class="product-ph">
+      <div class="ph-icon"><svg viewBox="0 0 48 28"><rect x="2" y="10" width="44" height="14" rx="3"/><circle cx="11" cy="24" r="4"/><circle cx="37" cy="24" r="4"/><rect x="14" y="4" width="20" height="8" rx="2"/><rect x="30" y="6" width="12" height="4"/></svg></div>
+      <span class="ph-note">Armoured Vehicles<br>Add product image</span>
+    </div>
+    <div class="product-cell-overlay">
+      <p class="product-cell-title">Armoured &amp; Tactical Vehicles</p>
+      <span class="product-cell-sub">APCs · IFVs · MRAPs · Protected Mobility</span>
+    </div>
+  </div>
+
+  <!-- CELL 2: Aviation & Unmanned Systems -->
+  <div class="product-cell">
+    <!--
+      PRODUCT IMAGE 2 — Aviation & Unmanned Systems
+      Replace with: <img src="aviation-uas.jpg" alt="Aviation & UAS">
+      Suggested: tactical UAV in flight, military helicopter, MALE drone, FPV systems.
+    -->
+    <div class="product-ph">
+      <div class="ph-icon"><svg viewBox="0 0 48 28"><ellipse cx="24" cy="14" rx="8" ry="5"/><line x1="2" y1="6" x2="16" y2="14"/><line x1="2" y1="22" x2="16" y2="14"/><line x1="32" y1="14" x2="46" y2="6"/><line x1="32" y1="14" x2="46" y2="22"/><circle cx="4" cy="6" r="3"/><circle cx="4" cy="22" r="3"/><circle cx="44" cy="6" r="3"/><circle cx="44" cy="22" r="3"/></svg></div>
+      <span class="ph-note">Aviation &amp; UAS<br>Add product image</span>
+    </div>
+    <div class="product-cell-overlay">
+      <p class="product-cell-title">Aviation &amp; Unmanned Systems</p>
+      <span class="product-cell-sub">UAVs · Attack Drones · ISR · Fixed &amp; Rotary Wing</span>
+    </div>
+  </div>
+
+  <!-- CELL 3: Weapons Systems -->
+  <div class="product-cell">
+    <!--
+      PRODUCT IMAGE 3 — Weapons Systems
+      Replace with: <img src="weapons-systems.jpg" alt="Weapons Systems">
+      Suggested: weapons at range, infantry weapons display, crew-served systems.
+    -->
+    <div class="product-ph">
+      <div class="ph-icon"><svg viewBox="0 0 48 20"><rect x="2" y="8" width="32" height="6" rx="2"/><rect x="28" y="6" width="16" height="3" rx="1"/><rect x="10" y="14" width="8" height="4" rx="1"/></svg></div>
+      <span class="ph-note">Weapons Systems<br>Add product image</span>
+    </div>
+    <div class="product-cell-overlay">
+      <p class="product-cell-title">Weapons Systems</p>
+      <span class="product-cell-sub">Small Arms · Crew-Served · ATGMs · Artillery</span>
+    </div>
+  </div>
+
+  <!-- CELL 4: Ammunition & Propellants -->
+  <div class="product-cell">
+    <!--
+      PRODUCT IMAGE 4 — Ammunition & Propellants
+      Replace with: <img src="ammunition.jpg" alt="Ammunition">
+      Suggested: ammunition crates, artillery shells, production line, stockpile.
+    -->
+    <div class="product-ph">
+      <div class="ph-icon"><svg viewBox="0 0 40 40"><rect x="8" y="4" width="8" height="28" rx="3"/><rect x="20" y="8" width="8" height="24" rx="3"/><rect x="4" y="32" width="32" height="4" rx="1"/></svg></div>
+      <span class="ph-note">Ammunition<br>Add product image</span>
+    </div>
+    <div class="product-cell-overlay">
+      <p class="product-cell-title">Ammunition &amp; Propellants</p>
+      <span class="product-cell-sub">Small Arms · Mortar · Artillery · Rockets</span>
+    </div>
+  </div>
+
+  <!-- CELL 5: Explosives & Energetic Materials -->
+  <div class="product-cell">
+    <!--
+      PRODUCT IMAGE 5 — Explosives & Energetic Materials
+      Replace with: <img src="explosives.jpg" alt="Explosives">
+      Suggested: controlled demolition, EOD personnel, energetic materials facility.
+    -->
+    <div class="product-ph">
+      <div class="ph-icon"><svg viewBox="0 0 40 40"><polygon points="20,4 24,16 36,16 26,24 30,36 20,28 10,36 14,24 4,16 16,16"/></svg></div>
+      <span class="ph-note">Explosives &amp; Energetics<br>Add product image</span>
+    </div>
+    <div class="product-cell-overlay">
+      <p class="product-cell-title">Explosives &amp; Energetic Materials</p>
+      <span class="product-cell-sub">Demolition · Propellant Charges · Bulk Compounds</span>
+    </div>
+  </div>
+
+  <!-- CELL 6: PPE & Soldier Systems -->
+  <div class="product-cell">
+    <!--
+      PRODUCT IMAGE 6 — PPE & Soldier Systems
+      Replace with: <img src="ppe-soldier.jpg" alt="PPE & Soldier Systems">
+      Suggested: ballistic helmets, body armour, tactical kit, soldiers in full kit.
+    -->
+    <div class="product-ph">
+      <div class="ph-icon"><svg viewBox="0 0 32 40"><path d="M6 14 C6 6 26 6 26 14 L26 26 C26 34 6 34 6 26 Z"/><rect x="10" y="26" width="12" height="10" rx="1"/></svg></div>
+      <span class="ph-note">PPE &amp; Soldier Systems<br>Add product image</span>
+    </div>
+    <div class="product-cell-overlay">
+      <p class="product-cell-title">PPE &amp; Soldier Systems</p>
+      <span class="product-cell-sub">Body Armour · Helmets · Tactical Kit · Field Equipment</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="section-pad">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title">A dedicated procurement partner for government and institutional defence clients</h2>
+        <span class="gold-rule"></span>
+        <div class="about-body-text">
+          <p>Teut Operational Services is a specialist defence procurement firm providing government ministries, defence institutions, and accredited commercial partners with a single, structured channel to source the full spectrum of defence and security equipment.</p>
+          <p>We operate as the procurement arm our clients need but do not always have the capacity to maintain in-house — managing supplier identification, qualification, documentation, and transaction execution from initial requirement through to confirmed delivery.</p>
+          <p>Every engagement is built on a foundation of legal certainty and compliance. We do not advance an enquiry without the instruments in place to protect every party to the transaction — and we do not introduce a supplier without verifying they meet the standards our clients require.</p>
+        </div>
+        <div class="mission-block">
+          <blockquote>"To deliver reliable, compliant, and operationally effective procurement solutions — connecting government and institutional partners with verified global supply chains in the world's most demanding defence and security environments."</blockquote>
+        </div>
+      </div>
+      <div class="reveal">
+        <img src="Imperial_stamp.png" alt="Teut Operational Services" class="about-seal">
+        <ul class="credentials-list">
+          <li><span class="cred-dot"></span>Full-spectrum defence equipment sourcing capability</li>
+          <li><span class="cred-dot"></span>Compliance and legal-instrument-led at every stage</li>
+          <li><span class="cred-dot"></span>Vetted international supplier registry</li>
+          <li><span class="cred-dot"></span>End User Certificate coordination and facilitation</li>
+          <li><span class="cred-dot"></span>Single point of contact from RFQ to delivery</li>
+          <li><span class="cred-dot"></span>Active procurement networks across 40+ countries</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities" class="section-pad">
+  <div class="inner">
+    <div class="cap-header reveal">
+      <span class="section-label">Procurement Capabilities</span>
+      <h2 class="section-title">What We Source</h2>
+      <span class="gold-rule"></span>
+    </div>
+    <div class="cap-grid">
+
+      <div class="cap-card reveal">
+        <span class="cap-num">01</span>
+        <h3 class="cap-title">Ground Vehicles &amp; Armoured Platforms</h3>
+        <p class="cap-text">New-build, refurbished, and government-surplus armoured and tactical vehicles sourced through established broker networks and direct manufacturer relationships.</p>
+        <ul class="cap-items">
+          <li>Armoured Personnel Carriers — wheeled and tracked</li>
+          <li>Infantry Fighting Vehicles</li>
+          <li>MRAP and protected mobility platforms</li>
+          <li>Light tactical 4×4 — armoured and unarmoured</li>
+          <li>Armoured utility vehicles, buses, and VIP transport</li>
+          <li>Self-propelled artillery and engineering support vehicles</li>
+        </ul>
+      </div>
+
+      <div class="cap-card reveal">
+        <span class="cap-num">02</span>
+        <h3 class="cap-title">Aviation &amp; Unmanned Systems</h3>
+        <p class="cap-text">Fixed-wing, rotary-wing, and unmanned platforms for government and defence clients. Both operational and restoration candidates available across tactical and strategic mission profiles.</p>
+        <ul class="cap-items">
+          <li>Multi-role combat and ground-attack aircraft</li>
+          <li>Combat, utility, and maritime helicopters</li>
+          <li>Tactical and medium-altitude UAVs</li>
+          <li>FPV, ISR, and loitering munition systems</li>
+          <li>Counter-UAS detection and jamming systems</li>
+          <li>Drone payloads, data links, and support equipment</li>
+        </ul>
+      </div>
+
+      <div class="cap-card reveal">
+        <span class="cap-num">03</span>
+        <h3 class="cap-title">Weapons Systems &amp; Armament</h3>
+        <p class="cap-text">Individual and crew-served weapons systems across calibre ranges suitable for infantry, vehicle-mounted, naval, and air-defence applications.</p>
+        <ul class="cap-items">
+          <li>Assault rifles, carbines, and precision rifles</li>
+          <li>General purpose and heavy machine guns</li>
+          <li>Anti-tank guided missile systems</li>
+          <li>Grenade launchers and RPG systems</li>
+          <li>Mortars — man-portable and self-propelled</li>
+          <li>Artillery, howitzers, and MLRS platforms</li>
+        </ul>
+      </div>
+
+      <div class="cap-card reveal">
+        <span class="cap-num">04</span>
+        <h3 class="cap-title">Ammunition &amp; Propellants</h3>
+        <p class="cap-text">Ammunition sourced across all calibres and natures through specialist supplier networks, with full documentation and export compliance support as standard.</p>
+        <ul class="cap-items">
+          <li>Small arms — pistol, rifle, machine gun</li>
+          <li>Mortar ammunition — HE, smoke, illuminating</li>
+          <li>Artillery and howitzer shells — all natures</li>
+          <li>Tank and direct-fire ammunition</li>
+          <li>Unguided and guided rockets</li>
+          <li>Grenades, fuses, detonators, and primers</li>
+        </ul>
+      </div>
+
+      <div class="cap-card reveal">
+        <span class="cap-num">05</span>
+        <h3 class="cap-title">Explosives &amp; Energetic Materials</h3>
+        <p class="cap-text">Propellant and energetic material supply chains for government clients involved in ammunition production, demolition operations, and defence industrial programmes.</p>
+        <ul class="cap-items">
+          <li>Artillery propellant charges</li>
+          <li>High explosive raw materials</li>
+          <li>Bulk explosive compounds — industrial and defence</li>
+          <li>Ammonium perchlorate and oxidiser compounds</li>
+          <li>Demolition charges and breaching explosives</li>
+          <li>Antimony and lead hardening alloys</li>
+        </ul>
+      </div>
+
+      <div class="cap-card reveal">
+        <span class="cap-num">06</span>
+        <h3 class="cap-title">PPE, Procurement Advisory &amp; Retainer</h3>
+        <p class="cap-text">Personal protective equipment and soldier systems sourced to NIJ and NATO standards. For clients with recurring procurement requirements, TOS offers structured retainer arrangements providing continuous access to our supplier network and sourcing capability.</p>
+        <ul class="cap-items">
+          <li>Ballistic helmets and plate carriers — NIJ certified</li>
+          <li>Body armour — soft and hard plate</li>
+          <li>Combat clothing, boots, and field equipment</li>
+          <li>Standing procurement retainer arrangements</li>
+          <li>Ongoing RFQ management and supplier monitoring</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GEOGRAPHY -->
+<section id="geography" class="section-pad">
+  <div class="inner">
+    <div class="geo-grid">
+      <div class="reveal">
+        <span class="section-label" style="color:rgba(184,150,12,0.9);">Geographic Coverage</span>
+        <h2 class="section-title light">Global Reach. Deep Regional Networks.</h2>
+        <span class="gold-rule"></span>
+        <p class="geo-body">TOS operates globally with no geographic constraint on the environments we can procure within or supply to. Our supplier network spans established international defence manufacturers, government-surplus channels, and specialist broker ecosystems across every major defence market.</p>
+        <p class="geo-body" style="margin-top:1rem;">Our deepest operational networks are concentrated in the theatres where procurement complexity is highest and trusted intermediaries are most scarce — giving our clients genuine access where it is most difficult to establish independently.</p>
+        <div class="geo-regions-wrap">
+          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">West Africa</span></div>
+          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">East Africa</span></div>
+          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Central Africa</span></div>
+          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Southern Africa</span></div>
+          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">North Africa</span></div>
+          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Sahel Region</span></div>
+          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Middle East</span></div>
+          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Gulf States</span></div>
+          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Eastern Europe</span></div>
+          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Balkans</span></div>
+          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">South Asia</span></div>
+          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Southeast Asia</span></div>
+          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">South America</span></div>
+          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Central America &amp; Caribbean</span></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="geo-image-block">
+          <!--
+            GEOGRAPHY IMAGE
+            Replace with: <img src="your-image.jpg" alt="TOS Global Operations">
+            Suggested: aerial convoy, field operations, satellite map graphic,
+            or regional landscape photography from an operational theatre.
+          -->
+          <div class="geo-ph">
+            <span>Geography / operations image — replace with aerial or field photography</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section id="approach" class="section-pad">
+  <div class="inner">
+    <div class="reveal">
+      <span class="section-label">How We Work</span>
+      <h2 class="section-title">Our Principles</h2>
+      <span class="gold-rule"></span>
+      <p style="font-size:0.97rem; color:var(--text-muted); line-height:1.85; max-width:620px; margin-top:0.5rem;">TOS operates to a standard that reflects the critical nature of the mandates we support. Four principles govern every engagement, without exception.</p>
+    </div>
+    <div class="approach-grid">
+
+      <div class="principle-card reveal">
+        <span class="principle-num">01</span>
+        <h3 class="principle-title">Structured Engagement</h3>
+        <p class="principle-text">Every procurement engagement follows a defined process from initial requirement through to delivery confirmation. There are no shortcuts, and no stage is bypassed. Clients receive the same standard of execution regardless of contract value or geography.</p>
+      </div>
+
+      <div class="principle-card reveal">
+        <span class="principle-num">02</span>
+        <h3 class="principle-title">Legal Certainty</h3>
+        <p class="principle-text">TOS does not advance any transaction without the appropriate legal instruments in place. Every party — buyer, seller, and intermediary — is protected before a single piece of substantive information changes hands. This is not a formality; it is the architecture that makes transactions possible.</p>
+      </div>
+
+      <div class="principle-card reveal">
+        <span class="principle-num">03</span>
+        <h3 class="principle-title">Verified Supply</h3>
+        <p class="principle-text">No supplier enters our network without passing a structured due diligence process covering legal entity verification, sanctions screening, export licence status, and capability assessment. Our clients rely on the quality of our supplier registry — and we take that responsibility seriously.</p>
+      </div>
+
+      <div class="principle-card reveal">
+        <span class="principle-num">04</span>
+        <h3 class="principle-title">Delivery Assurance</h3>
+        <p class="principle-text">TOS monitors every active procurement against agreed timelines, documentation milestones, and payment schedules from the point of contract execution. We remain engaged until delivery is confirmed and all obligations are discharged — providing our clients with a single point of accountability throughout.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-pad">
+  <div class="inner">
+    <div class="reveal" style="margin-bottom:3.5rem;">
+      <span class="section-label">Get in Touch</span>
+      <h2 class="section-title">Engage TOS</h2>
+      <span class="gold-rule"></span>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="contact-intro">All enquiries are treated with absolute discretion. TOS operates across multiple jurisdictions and does not discuss client engagements or requirements with any third party without written authorisation. Capability can be scoped and tailored to your specific procurement requirement — contact us to discuss.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <span class="contact-label">Secure Email</span>
+              <p class="contact-val"><a href="mailto:teut.os@protonmail.com">teut.os@protonmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <div>
+              <span class="contact-label">WhatsApp</span>
+              <p class="contact-val"><a href="https://wa.me/34656559472">+34 656 559 472</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="First name" required></div>
+            <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Last name" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="org">Organisation</label><input type="text" id="org" placeholder="Ministry / institution / entity"></div>
+            <div class="form-group"><label for="role">Your Role</label><input type="text" id="role" placeholder="Position / title"></div>
+          </div>
+          <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" placeholder="Secure email preferred" required></div>
+          <div class="form-group">
+            <label for="enquiry">Nature of Enquiry</label>
+            <select id="enquiry" required>
+              <option value="" disabled selected>Select category</option>
+              <option>Ground Vehicles &amp; Armoured Platforms</option>
+              <option>Aviation &amp; Unmanned Systems</option>
+              <option>Weapons Systems &amp; Armament</option>
+              <option>Ammunition &amp; Propellants</option>
+              <option>Explosives &amp; Energetic Materials</option>
+              <option>PPE &amp; Soldier Systems</option>
+              <option>Procurement Retainer Arrangement</option>
+              <option>EUC &amp; Compliance Support</option>
+              <option>Supplier / Partner Onboarding</option>
+              <option>Other / Multiple Categories</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="message">Requirement</label><textarea id="message" placeholder="Briefly describe your procurement requirement." required></textarea></div>
+          <div class="form-footer">
+            <span class="form-fine">All submissions treated with strict confidentiality.</span>
+            <button type="submit" class="btn-submit">Submit Enquiry</button>
+          </div>
+          <div id="form-success">Thank you. Your enquiry has been received. We will respond promptly and with full discretion.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <img src="TOS_logo_1.png" alt="TOS">
+      <p>Specialist government defence procurement partner. Connecting ministries and institutional clients with verified global supply chains.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Procurement</p>
+      <ul class="footer-col-links">
+        <li><a href="#capabilities">Ground Vehicles &amp; Armoured Platforms</a></li>
+        <li><a href="#capabilities">Aviation &amp; Unmanned Systems</a></li>
+        <li><a href="#capabilities">Weapons Systems &amp; Armament</a></li>
+        <li><a href="#capabilities">Ammunition &amp; Propellants</a></li>
+        <li><a href="#capabilities">Explosives &amp; Energetic Materials</a></li>
+        <li><a href="#capabilities">PPE &amp; Soldier Systems</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <ul class="footer-col-links">
+        <li><a href="mailto:teut.os@protonmail.com">teut.os@protonmail.com</a></li>
+        <li><a href="https://wa.me/34656559472">WhatsApp: +34 656 559 472</a></li>
+        <li><a href="#contact">Submit an Enquiry</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Teut Operational Services. All rights reserved.</p>
+    <p>All enquiries treated with strict confidentiality.</p>
+  </div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(el => io.observe(el));
+
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('form-success').style.display = 'block';
+  e.target.querySelectorAll('input,select,textarea,button').forEach(el => el.disabled = true);
+}
+</script>
+</body>
+</html>
