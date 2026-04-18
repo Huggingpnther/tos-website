@@ -315,7 +315,7 @@ nav {
 .geo-region-item:nth-child(even) { padding-left: 1.5rem; border-left: 1px solid rgba(255,255,255,0.07); }
 .geo-dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
 .geo-region-name { font-size: 0.85rem; color: rgba(255,255,255,0.75); }
-.geo-image-block { position: relative; overflow: hidden; background: var(--white); border-radius: 2px; }
+.geo-image-block { position: relative; overflow: hidden; background: var(--white); }
 .geo-image-block img { width: 100%; height: auto; object-fit: contain; opacity: 1; display: block; }
 .geo-image-block .geo-ph {
   width: 100%; height: 100%; background: var(--navy-mid);
@@ -547,7 +547,6 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
 <!-- PRODUCT BAND -->
 <div class="product-band">
 
-  <!-- CELL 1: Armoured Vehicles -->
   <div class="product-cell">
     <img src="Screenshot_2026-04-18_110106.png" alt="Armoured & Tactical Vehicles">
     <div class="product-cell-overlay">
@@ -556,7 +555,6 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
     </div>
   </div>
 
-  <!-- CELL 2: Aviation & Unmanned Systems -->
   <div class="product-cell">
     <img src="43910ad6-b298-44c0-aad8-e664d473cbd4.jpeg" alt="Aviation & Unmanned Systems">
     <div class="product-cell-overlay">
@@ -565,7 +563,6 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
     </div>
   </div>
 
-  <!-- CELL 3: Weapons Systems -->
   <div class="product-cell">
     <img src="ebab75a5-8ef6-4f99-8132-bacb6b3d879e-removebg-preview.png" alt="Weapons Systems">
     <div class="product-cell-overlay">
@@ -574,7 +571,6 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
     </div>
   </div>
 
-  <!-- CELL 4: Ammunition & Propellants -->
   <div class="product-cell">
     <img src="7_62.jpeg" alt="Ammunition & Propellants">
     <div class="product-cell-overlay">
@@ -583,7 +579,6 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
     </div>
   </div>
 
-  <!-- CELL 5: Explosives & Energetic Materials -->
   <div class="product-cell">
     <img src="633a3045-58ea-4709-b39a-0ac5cfe64568.jpeg" alt="Explosives & Energetic Materials">
     <div class="product-cell-overlay">
@@ -592,7 +587,6 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
     </div>
   </div>
 
-  <!-- CELL 6: PPE & Soldier Systems -->
   <div class="product-cell">
     <img src="110721-M-0000B-000.jpg" alt="PPE & Soldier Systems">
     <div class="product-cell-overlay">
@@ -794,31 +788,37 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
         </div>
       </div>
       <div class="reveal">
-        <!--
-          CONTACT FORM — EMAIL SETUP
-          This form uses Formspree to send submissions to teut.os@protonmail.com.
-          One-time setup (free):
-          1. Go to https://formspree.io and create a free account
-          2. Create a new form and set the destination to teut.os@protonmail.com
-          3. Copy your form ID (looks like: xpwqabcd)
-          4. Replace YOUR_FORMSPREE_ID below with that ID
-          That's it — submissions will arrive directly in your ProtonMail inbox.
-        -->
-        <form class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="handleSubmit(event)">
-          <input type="hidden" name="_subject" value="New TOS Website Enquiry">
-          <input type="hidden" name="_replyto" id="reply-to-field">
+        <form id="tos-contact-form" class="contact-form">
           <div class="form-row">
-            <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="first_name" placeholder="First name" required></div>
-            <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" name="last_name" placeholder="Last name" required></div>
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="first_name" placeholder="First name" required data-fs-field>
+              <span data-fs-error="first_name" style="font-size:0.78rem;color:#8B1A1A;margin-top:3px;display:block;"></span>
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="last_name" placeholder="Last name" required data-fs-field>
+              <span data-fs-error="last_name" style="font-size:0.78rem;color:#8B1A1A;margin-top:3px;display:block;"></span>
+            </div>
           </div>
           <div class="form-row">
-            <div class="form-group"><label for="org">Organisation</label><input type="text" id="org" name="organisation" placeholder="Ministry / institution / entity"></div>
-            <div class="form-group"><label for="role">Your Role</label><input type="text" id="role" name="role" placeholder="Position / title"></div>
+            <div class="form-group">
+              <label for="org">Organisation</label>
+              <input type="text" id="org" name="organisation" placeholder="Ministry / institution / entity">
+            </div>
+            <div class="form-group">
+              <label for="role">Your Role</label>
+              <input type="text" id="role" name="role" placeholder="Position / title">
+            </div>
           </div>
-          <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="Secure email preferred" required></div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Secure email preferred" required data-fs-field>
+            <span data-fs-error="email" style="font-size:0.78rem;color:#8B1A1A;margin-top:3px;display:block;"></span>
+          </div>
           <div class="form-group">
             <label for="enquiry">Nature of Enquiry</label>
-            <select id="enquiry" name="enquiry_type" required>
+            <select id="enquiry" name="enquiry_type" required data-fs-field>
               <option value="" disabled selected>Select category</option>
               <option>Ground Vehicles &amp; Armoured Platforms</option>
               <option>Aviation &amp; Unmanned Systems</option>
@@ -832,14 +832,22 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
               <option>Other / Multiple Categories</option>
             </select>
           </div>
-          <div class="form-group"><label for="message">Requirement</label><textarea id="message" name="message" placeholder="Briefly describe your procurement requirement." required></textarea></div>
+          <div class="form-group">
+            <label for="message">Requirement</label>
+            <textarea id="message" name="message" placeholder="Briefly describe your procurement requirement." required data-fs-field></textarea>
+            <span data-fs-error="message" style="font-size:0.78rem;color:#8B1A1A;margin-top:3px;display:block;"></span>
+          </div>
+          <!-- Form-level error (e.g. network failure) -->
+          <div data-fs-error style="display:none; font-family:'EB Garamond',serif; font-style:italic; font-size:0.9rem; color:#8B1A1A; border-left:3px solid #8B1A1A; padding:0.75rem 1rem; background:#FDF5F5; margin-bottom:0.5rem;"></div>
           <div class="form-footer">
             <span class="form-fine">All submissions treated with strict confidentiality.</span>
-            <button type="submit" class="btn-submit">Submit Enquiry</button>
+            <button type="submit" class="btn-submit" data-fs-submit-btn>Submit Enquiry</button>
           </div>
-          <div id="form-success">Thank you. Your enquiry has been received. We will respond promptly and with full discretion.</div>
-          <div id="form-error" style="display:none; font-family:'EB Garamond',serif; font-style:italic; font-size:0.95rem; color:#8B1A1A; border-left:3px solid #8B1A1A; padding:0.75rem 1rem; background:#FDF5F5; margin-top:0.5rem;"></div>
         </form>
+        <!-- Success message shown after submission -->
+        <div data-fs-success style="display:none; font-family:'EB Garamond',serif; font-style:italic; font-size:0.95rem; color:var(--navy); border-left:3px solid var(--navy); padding:0.75rem 1rem; background:var(--off-white); margin-top:0.5rem;">
+          Thank you. Your enquiry has been received. We will respond promptly and with full discretion.
+        </div>
       </div>
     </div>
   </div>
@@ -879,50 +887,10 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 reveals.forEach(el => io.observe(el));
 
-async function handleSubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('.btn-submit');
-  const successEl = document.getElementById('form-success');
-  const errorEl = document.getElementById('form-error');
-
-  // Mirror email field into _replyto hidden input
-  const emailVal = document.getElementById('email').value;
-  document.getElementById('reply-to-field').value = emailVal;
-
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
-
-  try {
-    const data = new FormData(form);
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
-      successEl.style.display = 'block';
-      if (errorEl) errorEl.style.display = 'none';
-      form.querySelectorAll('input,select,textarea,button').forEach(el => el.disabled = true);
-    } else {
-      const json = await response.json();
-      btn.textContent = 'Submit Enquiry';
-      btn.disabled = false;
-      if (errorEl) {
-        errorEl.style.display = 'block';
-        errorEl.textContent = json.errors ? json.errors.map(e => e.message).join(', ') : 'Submission failed. Please email us directly.';
-      }
-    }
-  } catch (err) {
-    btn.textContent = 'Submit Enquiry';
-    btn.disabled = false;
-    if (errorEl) {
-      errorEl.style.display = 'block';
-      errorEl.textContent = 'Network error. Please email teut.os@protonmail.com directly.';
-    }
-  }
-}
+// Formspree Ajax initialisation
+window.formspree = window.formspree || function() { (formspree.q = formspree.q || []).push(arguments); };
+formspree('initForm', { formElement: '#tos-contact-form', formId: 'xvzdrkpj' });
 </script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
