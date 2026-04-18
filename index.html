@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Teut Operational Services — Defence &amp; Security Procurement Solutions</title>
+<title>Teut Operational Services — Defence &amp; Security Consultancy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
@@ -269,16 +269,17 @@ nav {
 #capabilities { background: var(--white); }
 .cap-header { margin-bottom: 3.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid var(--border); }
 .cap-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
+  display: grid; grid-template-columns: repeat(2, 1fr);
   gap: 0; border: 1px solid var(--border);
 }
 .cap-card {
   padding: 2.5rem 2rem 2rem; border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border); transition: background 0.2s;
+  display: flex; flex-direction: column;
 }
 .cap-card:hover { background: var(--off-white); }
-.cap-card:nth-child(3), .cap-card:nth-child(6) { border-right: none; }
-.cap-card:nth-child(4), .cap-card:nth-child(5), .cap-card:nth-child(6) { border-bottom: none; }
+.cap-card:nth-child(2), .cap-card:nth-child(4) { border-right: none; }
+.cap-card:nth-child(3), .cap-card:nth-child(4) { border-bottom: none; }
 .cap-num {
   font-family: 'EB Garamond', serif; font-size: 3rem; font-weight: 400;
   color: rgba(28,43,74,0.07); line-height: 1; margin-bottom: 1rem; display: block;
@@ -287,10 +288,10 @@ nav {
   font-family: 'EB Garamond', serif; font-size: 1.15rem; font-weight: 500;
   color: var(--navy-dark); margin-bottom: 0.75rem; line-height: 1.3;
 }
-.cap-text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1rem; }
+.cap-text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0; flex: 1; }
 .cap-items {
   list-style: none; display: flex; flex-direction: column; gap: 0.3rem;
-  padding-top: 0.75rem; border-top: 1px solid var(--border);
+  padding-top: 0.75rem; margin-top: 1rem; border-top: 1px solid var(--border);
 }
 .cap-items li {
   font-size: 0.82rem; color: var(--text-light); padding-left: 0.85rem;
@@ -410,7 +411,7 @@ nav {
 footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.25); }
 .footer-main {
   max-width: 1160px; margin: 0 auto; padding: 3rem;
-  display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem;
+  display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem;
 }
 .footer-brand img { height: 36px; width: auto; margin-bottom: 1rem; opacity: 0.9; }
 .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.8; max-width: 280px; }
@@ -439,9 +440,8 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
   .product-band { grid-template-columns: repeat(3, 1fr); }
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .cap-grid { grid-template-columns: repeat(2, 1fr); }
-  .cap-card:nth-child(3) { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .cap-card:nth-child(2), .cap-card:nth-child(4), .cap-card:nth-child(6) { border-right: none; }
-  .cap-card:nth-child(5), .cap-card:nth-child(6) { border-bottom: none; }
+  .cap-card:nth-child(2), .cap-card:nth-child(4) { border-right: none; }
+  .cap-card:nth-child(3), .cap-card:nth-child(4) { border-bottom: none; }
   .geo-grid { grid-template-columns: 1fr; gap: 3rem; }
   .geo-image-block { height: 300px; }
   .approach-grid { grid-template-columns: repeat(2, 1fr); }
@@ -455,7 +455,7 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
   .nav-links { display: none; }
   .product-band { grid-template-columns: repeat(2, 1fr); }
   .cap-grid { grid-template-columns: 1fr; }
-  .cap-card:nth-child(n) { border-right: none; border-bottom: 1px solid var(--border); }
+  .cap-card { border-right: none; border-bottom: 1px solid var(--border); }
   .cap-card:last-child { border-bottom: none; }
   .approach-grid { grid-template-columns: 1fr; }
   .principle-card { border-right: none; border-bottom: 1px solid var(--border); }
@@ -473,7 +473,7 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="inner">
-    <span class="topbar-left">Defence &amp; Security Procurement Solutions</span>
+    <span class="topbar-left">Defence &amp; Security Consultancy</span>
     <span class="topbar-right">Secure contact: <a href="mailto:teut.os@protonmail.com">teut.os@protonmail.com</a></span>
   </div>
 </div>
@@ -485,12 +485,12 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
       <img src="TOS_logo_1.png" alt="TOS">
       <div class="nav-wordmark">
         <strong>Teut Operational Services</strong>
-        <span>Defence &amp; Security Procurement</span>
+        <span>Defence &amp; Security Consultancy</span>
       </div>
     </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#capabilities">Procurement</a></li>
+      <li><a href="#capabilities">Capabilities</a></li>
       <li><a href="#geography">Coverage</a></li>
       <li><a href="#approach">Our Approach</a></li>
       <li class="nav-engage"><a href="#contact">Engage TOS</a></li>
@@ -687,92 +687,62 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
 <section id="capabilities" class="section-pad">
   <div class="inner">
     <div class="cap-header reveal">
-      <span class="section-label">Procurement Capabilities</span>
-      <h2 class="section-title">What We Source</h2>
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Core Capabilities</h2>
       <span class="gold-rule"></span>
     </div>
     <div class="cap-grid">
 
       <div class="cap-card reveal">
         <span class="cap-num">01</span>
-        <h3 class="cap-title">Ground Vehicles &amp; Armoured Platforms</h3>
-        <p class="cap-text">New-build, refurbished, and government-surplus armoured and tactical vehicles sourced through established broker networks and direct manufacturer relationships.</p>
+        <h3 class="cap-title">Defence Procurement &amp; Supply Facilitation</h3>
+        <p class="cap-text">Full-spectrum sourcing and supply chain coordination. From initial RFQ through to delivery, TOS connects buyers with compliant, vetted suppliers across global defence markets.</p>
         <ul class="cap-items">
-          <li>Armoured Personnel Carriers — wheeled and tracked</li>
-          <li>Infantry Fighting Vehicles</li>
-          <li>MRAP and protected mobility platforms</li>
-          <li>Light tactical 4×4 — armoured and unarmoured</li>
-          <li>Armoured utility vehicles, buses, and VIP transport</li>
-          <li>Self-propelled artillery and engineering support vehicles</li>
+          <li>Armoured &amp; tactical ground vehicles</li>
+          <li>Aviation platforms &amp; unmanned systems</li>
+          <li>Weapons systems across all calibres and applications</li>
+          <li>Ammunition, propellants &amp; energetic materials</li>
+          <li>Personal protective equipment &amp; soldier systems</li>
+          <li>New-build, refurbished, and government-surplus stock</li>
         </ul>
       </div>
 
       <div class="cap-card reveal">
         <span class="cap-num">02</span>
-        <h3 class="cap-title">Aviation &amp; Unmanned Systems</h3>
-        <p class="cap-text">Fixed-wing, rotary-wing, and unmanned platforms for government and defence clients. Both operational and restoration candidates available across tactical and strategic mission profiles.</p>
+        <h3 class="cap-title">Government Contract Facilitation</h3>
+        <p class="cap-text">TOS acts as the structured intermediary between government procurement bodies and international suppliers — managing documentation, legal instruments, and counterparty due diligence at every stage.</p>
         <ul class="cap-items">
-          <li>Multi-role combat and ground-attack aircraft</li>
-          <li>Combat, utility, and maritime helicopters</li>
-          <li>Tactical and medium-altitude UAVs</li>
-          <li>FPV, ISR, and loitering munition systems</li>
-          <li>Counter-UAS detection and jamming systems</li>
-          <li>Drone payloads, data links, and support equipment</li>
+          <li>Single point of contact from requirement to delivery</li>
+          <li>Supplier qualification and registry management</li>
+          <li>Contract structuring and legal instrument execution</li>
+          <li>Market access for international defence contractors</li>
+          <li>Regulatory navigation across host-nation frameworks</li>
         </ul>
       </div>
 
       <div class="cap-card reveal">
         <span class="cap-num">03</span>
-        <h3 class="cap-title">Weapons Systems &amp; Armament</h3>
-        <p class="cap-text">Individual and crew-served weapons systems across calibre ranges suitable for infantry, vehicle-mounted, naval, and air-defence applications.</p>
+        <h3 class="cap-title">Procurement Compliance &amp; EUC</h3>
+        <p class="cap-text">Expert navigation of End User Certificate requirements and multi-jurisdictional export licensing — protecting all parties and ensuring every transaction is structured to withstand regulatory scrutiny.</p>
         <ul class="cap-items">
-          <li>Assault rifles, carbines, and precision rifles</li>
-          <li>General purpose and heavy machine guns</li>
-          <li>Anti-tank guided missile systems</li>
-          <li>Grenade launchers and RPG systems</li>
-          <li>Mortars — man-portable and self-propelled</li>
-          <li>Artillery, howitzers, and MLRS platforms</li>
+          <li>EUC sourcing, verification &amp; coordination</li>
+          <li>Export licence management across jurisdictions</li>
+          <li>Sanctions screening and compliance advisory</li>
+          <li>Government acquisition process support</li>
+          <li>Transaction documentation to international standards</li>
         </ul>
       </div>
 
       <div class="cap-card reveal">
         <span class="cap-num">04</span>
-        <h3 class="cap-title">Ammunition &amp; Propellants</h3>
-        <p class="cap-text">Ammunition sourced across all calibres and natures through specialist supplier networks, with full documentation and export compliance support as standard.</p>
+        <h3 class="cap-title">Procurement Retainer &amp; Ongoing Advisory</h3>
+        <p class="cap-text">For ministries and institutions with recurring procurement requirements, TOS offers structured retainer arrangements — providing standing access to our supplier network, active RFQ management, and dedicated procurement support on a continuous basis.</p>
         <ul class="cap-items">
-          <li>Small arms — pistol, rifle, machine gun</li>
-          <li>Mortar ammunition — HE, smoke, illuminating</li>
-          <li>Artillery and howitzer shells — all natures</li>
-          <li>Tank and direct-fire ammunition</li>
-          <li>Unguided and guided rockets</li>
-          <li>Grenades, fuses, detonators, and primers</li>
-        </ul>
-      </div>
-
-      <div class="cap-card reveal">
-        <span class="cap-num">05</span>
-        <h3 class="cap-title">Explosives &amp; Energetic Materials</h3>
-        <p class="cap-text">Propellant and energetic material supply chains for government clients involved in ammunition production, demolition operations, and defence industrial programmes.</p>
-        <ul class="cap-items">
-          <li>Artillery propellant charges</li>
-          <li>High explosive raw materials</li>
-          <li>Bulk explosive compounds — industrial and defence</li>
-          <li>Ammonium perchlorate and oxidiser compounds</li>
-          <li>Demolition charges and breaching explosives</li>
-          <li>Antimony and lead hardening alloys</li>
-        </ul>
-      </div>
-
-      <div class="cap-card reveal">
-        <span class="cap-num">06</span>
-        <h3 class="cap-title">PPE, Procurement Advisory &amp; Retainer</h3>
-        <p class="cap-text">Personal protective equipment and soldier systems sourced to NIJ and NATO standards. For clients with recurring procurement requirements, TOS offers structured retainer arrangements providing continuous access to our supplier network and sourcing capability.</p>
-        <ul class="cap-items">
-          <li>Ballistic helmets and plate carriers — NIJ certified</li>
-          <li>Body armour — soft and hard plate</li>
-          <li>Combat clothing, boots, and field equipment</li>
-          <li>Standing procurement retainer arrangements</li>
-          <li>Ongoing RFQ management and supplier monitoring</li>
+          <li>Dedicated procurement retainer arrangements</li>
+          <li>Ongoing RFQ management and supplier matching</li>
+          <li>Standing supplier monitoring and registry updates</li>
+          <li>Priority access to emerging supply opportunities</li>
+          <li>Periodic procurement review and market reporting</li>
         </ul>
       </div>
 
@@ -790,22 +760,6 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
         <span class="gold-rule"></span>
         <p class="geo-body">TOS operates globally with no geographic constraint on the environments we can procure within or supply to. Our supplier network spans established international defence manufacturers, government-surplus channels, and specialist broker ecosystems across every major defence market.</p>
         <p class="geo-body" style="margin-top:1rem;">Our deepest operational networks are concentrated in the theatres where procurement complexity is highest and trusted intermediaries are most scarce — giving our clients genuine access where it is most difficult to establish independently.</p>
-        <div class="geo-regions-wrap">
-          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">West Africa</span></div>
-          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">East Africa</span></div>
-          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Central Africa</span></div>
-          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Southern Africa</span></div>
-          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">North Africa</span></div>
-          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Sahel Region</span></div>
-          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Middle East</span></div>
-          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Gulf States</span></div>
-          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Eastern Europe</span></div>
-          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Balkans</span></div>
-          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">South Asia</span></div>
-          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Southeast Asia</span></div>
-          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">South America</span></div>
-          <div class="geo-region-item"><span class="geo-dot"></span><span class="geo-region-name">Central America &amp; Caribbean</span></div>
-        </div>
       </div>
       <div class="reveal">
         <div class="geo-image-block">
@@ -940,17 +894,6 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
     <div class="footer-brand">
       <img src="TOS_logo_1.png" alt="TOS">
       <p>Specialist government defence procurement partner. Connecting ministries and institutional clients with verified global supply chains.</p>
-    </div>
-    <div>
-      <p class="footer-col-title">Procurement</p>
-      <ul class="footer-col-links">
-        <li><a href="#capabilities">Ground Vehicles &amp; Armoured Platforms</a></li>
-        <li><a href="#capabilities">Aviation &amp; Unmanned Systems</a></li>
-        <li><a href="#capabilities">Weapons Systems &amp; Armament</a></li>
-        <li><a href="#capabilities">Ammunition &amp; Propellants</a></li>
-        <li><a href="#capabilities">Explosives &amp; Energetic Materials</a></li>
-        <li><a href="#capabilities">PPE &amp; Soldier Systems</a></li>
-      </ul>
     </div>
     <div>
       <p class="footer-col-title">Contact</p>
