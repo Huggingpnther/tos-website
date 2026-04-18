@@ -788,37 +788,22 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
         </div>
       </div>
       <div class="reveal">
+        <div id="form-sent" style="display:none; font-family:'EB Garamond',serif; font-style:italic; font-size:1.05rem; color:var(--navy); border-left:3px solid var(--navy); padding:1rem 1.25rem; background:var(--off-white); margin-bottom:1rem;">
+          Enquiry sent. We will respond promptly and with full discretion.
+        </div>
         <form id="tos-contact-form" class="contact-form">
           <div class="form-row">
-            <div class="form-group">
-              <label for="fname">First Name</label>
-              <input type="text" id="fname" name="first_name" placeholder="First name" required data-fs-field>
-              <span data-fs-error="first_name" style="font-size:0.78rem;color:#8B1A1A;margin-top:3px;display:block;"></span>
-            </div>
-            <div class="form-group">
-              <label for="lname">Last Name</label>
-              <input type="text" id="lname" name="last_name" placeholder="Last name" required data-fs-field>
-              <span data-fs-error="last_name" style="font-size:0.78rem;color:#8B1A1A;margin-top:3px;display:block;"></span>
-            </div>
+            <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="first_name" placeholder="First name" required></div>
+            <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" name="last_name" placeholder="Last name" required></div>
           </div>
           <div class="form-row">
-            <div class="form-group">
-              <label for="org">Organisation</label>
-              <input type="text" id="org" name="organisation" placeholder="Ministry / institution / entity">
-            </div>
-            <div class="form-group">
-              <label for="role">Your Role</label>
-              <input type="text" id="role" name="role" placeholder="Position / title">
-            </div>
+            <div class="form-group"><label for="org">Organisation</label><input type="text" id="org" name="organisation" placeholder="Ministry / institution / entity"></div>
+            <div class="form-group"><label for="role">Your Role</label><input type="text" id="role" name="role" placeholder="Position / title"></div>
           </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Secure email preferred" required data-fs-field>
-            <span data-fs-error="email" style="font-size:0.78rem;color:#8B1A1A;margin-top:3px;display:block;"></span>
-          </div>
+          <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="Secure email preferred" required></div>
           <div class="form-group">
             <label for="enquiry">Nature of Enquiry</label>
-            <select id="enquiry" name="enquiry_type" required data-fs-field>
+            <select id="enquiry" name="enquiry_type" required>
               <option value="" disabled selected>Select category</option>
               <option>Ground Vehicles &amp; Armoured Platforms</option>
               <option>Aviation &amp; Unmanned Systems</option>
@@ -832,57 +817,17 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
               <option>Other / Multiple Categories</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="message">Requirement</label>
-            <textarea id="message" name="message" placeholder="Briefly describe your procurement requirement." required data-fs-field></textarea>
-            <span data-fs-error="message" style="font-size:0.78rem;color:#8B1A1A;margin-top:3px;display:block;"></span>
-          </div>
-          <div data-fs-error style="display:none;font-family:'EB Garamond',serif;font-style:italic;font-size:0.9rem;color:#8B1A1A;border-left:3px solid #8B1A1A;padding:0.75rem 1rem;background:#FDF5F5;margin-bottom:0.5rem;"></div>
+          <div class="form-group"><label for="message">Requirement</label><textarea id="message" name="message" placeholder="Briefly describe your procurement requirement." required></textarea></div>
           <div class="form-footer">
             <span class="form-fine">All submissions treated with strict confidentiality.</span>
-            <button type="submit" class="btn-submit" id="submit-btn" data-fs-submit-btn>Submit Enquiry</button>
+            <button type="submit" id="submit-btn" class="btn-submit">Submit Enquiry</button>
           </div>
+          <div id="form-error" style="display:none; font-family:'EB Garamond',serif; font-style:italic; font-size:0.9rem; color:#8B1A1A; border-left:3px solid #8B1A1A; padding:0.75rem 1rem; background:#FDF5F5; margin-top:0.5rem;"></div>
         </form>
-        <div data-fs-success style="display:none;font-family:'EB Garamond',serif;font-style:italic;font-size:0.95rem;color:var(--navy);border-left:3px solid var(--navy);padding:0.75rem 1rem;background:var(--off-white);margin-top:0.5rem;">
-          Enquiry sent. We will respond promptly and with full discretion.
-        </div>
       </div>
     </div>
   </div>
 </section>
-
-<script>
-const reveals = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 60);
-      io.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.08 });
-reveals.forEach(el => io.observe(el));
-
-// Formspree Ajax — button shows "Sending…" immediately on submit, "Sent ✓" on success
-window.formspree = window.formspree || function() { (formspree.q = formspree.q || []).push(arguments); };
-formspree('initForm', {
-  formElement: '#tos-contact-form',
-  formId: 'xvzdrkpj',
-  onSubmit: function() {
-    var btn = document.getElementById('submit-btn');
-    if (btn) { btn.textContent = 'Sending\u2026'; btn.disabled = true; }
-  },
-  onSuccess: function() {
-    var btn = document.getElementById('submit-btn');
-    if (btn) { btn.textContent = 'Sent \u2713'; }
-  },
-  onError: function() {
-    var btn = document.getElementById('submit-btn');
-    if (btn) { btn.textContent = 'Submit Enquiry'; btn.disabled = false; }
-  }
-});
-</script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 <!-- FOOTER -->
 <footer>
@@ -905,5 +850,55 @@ formspree('initForm', {
     <p>All enquiries treated with strict confidentiality.</p>
   </div>
 </footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(el => io.observe(el));
+
+document.getElementById('tos-contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var form = this;
+  var btn = document.getElementById('submit-btn');
+  var sentEl = document.getElementById('form-sent');
+  var errorEl = document.getElementById('form-error');
+
+  btn.textContent = 'Sending\u2026';
+  btn.disabled = true;
+  errorEl.style.display = 'none';
+
+  try {
+    var response = await fetch('https://formspree.io/f/xvzdrkpj', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      form.reset();
+      sentEl.style.display = 'block';
+      btn.textContent = 'Sent \u2713';
+    } else {
+      var json = await response.json();
+      var msg = (json.errors && json.errors.length) ? json.errors.map(function(x){ return x.message; }).join(', ') : 'Submission failed — please email us directly.';
+      errorEl.textContent = msg;
+      errorEl.style.display = 'block';
+      btn.textContent = 'Submit Enquiry';
+      btn.disabled = false;
+    }
+  } catch(err) {
+    errorEl.textContent = 'Network error — please email teut.os@protonmail.com directly.';
+    errorEl.style.display = 'block';
+    btn.textContent = 'Submit Enquiry';
+    btn.disabled = false;
+  }
+});
+</script>
 </body>
 </html>
