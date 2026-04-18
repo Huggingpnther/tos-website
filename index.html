@@ -315,8 +315,8 @@ nav {
 .geo-region-item:nth-child(even) { padding-left: 1.5rem; border-left: 1px solid rgba(255,255,255,0.07); }
 .geo-dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
 .geo-region-name { font-size: 0.85rem; color: rgba(255,255,255,0.75); }
-.geo-image-block { position: relative; overflow: hidden; background: var(--white); }
-.geo-image-block img { width: 100%; height: auto; object-fit: contain; opacity: 1; display: block; }
+.geo-image-block { position: relative; overflow: hidden; background: var(--navy-dark); line-height: 0; }
+.geo-image-block img { width: 100%; height: auto; display: block; opacity: 1; }
 .geo-image-block .geo-ph {
   width: 100%; height: 100%; background: var(--navy-mid);
   display: flex; align-items: center; justify-content: center;
@@ -564,7 +564,7 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
   </div>
 
   <div class="product-cell">
-    <img src="ebab75a5-8ef6-4f99-8132-bacb6b3d879e-removebg-preview.png" alt="Weapons Systems">
+    <img src="-e-x-t-e-r-n-a-l_-i-m-a-g-e_-t-o_-i-m-a-g-e-ed30bea2-b73f-4ccc-9c3c-dca642e1a501.avif" alt="Weapons Systems">
     <div class="product-cell-overlay">
       <p class="product-cell-title">Weapons Systems</p>
       <span class="product-cell-sub">Small Arms · Crew-Served · ATGMs · Artillery</span>
@@ -588,7 +588,7 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
   </div>
 
   <div class="product-cell">
-    <img src="110721-M-0000B-000.jpg" alt="PPE & Soldier Systems">
+    <img src="mannequin-army-uniform-equipment-safety-helmet-goggles-special-radio-communication-device-modern-warfare-facilities_493343-41978.jpg" alt="PPE & Soldier Systems">
     <div class="product-cell-overlay">
       <p class="product-cell-title">PPE &amp; Soldier Systems</p>
       <span class="product-cell-sub">Body Armour · Helmets · Tactical Kit · Field Equipment</span>
@@ -709,7 +709,7 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
       </div>
       <div class="reveal">
         <div class="geo-image-block">
-          <img src="MapChart_Map.png" alt="TOS Global Coverage Map">
+          <img src="MapChart_Map_17_04_26.png" alt="TOS Global Coverage Map">
         </div>
       </div>
     </div>
@@ -837,21 +837,52 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
             <textarea id="message" name="message" placeholder="Briefly describe your procurement requirement." required data-fs-field></textarea>
             <span data-fs-error="message" style="font-size:0.78rem;color:#8B1A1A;margin-top:3px;display:block;"></span>
           </div>
-          <!-- Form-level error (e.g. network failure) -->
-          <div data-fs-error style="display:none; font-family:'EB Garamond',serif; font-style:italic; font-size:0.9rem; color:#8B1A1A; border-left:3px solid #8B1A1A; padding:0.75rem 1rem; background:#FDF5F5; margin-bottom:0.5rem;"></div>
+          <div data-fs-error style="display:none;font-family:'EB Garamond',serif;font-style:italic;font-size:0.9rem;color:#8B1A1A;border-left:3px solid #8B1A1A;padding:0.75rem 1rem;background:#FDF5F5;margin-bottom:0.5rem;"></div>
           <div class="form-footer">
             <span class="form-fine">All submissions treated with strict confidentiality.</span>
-            <button type="submit" class="btn-submit" data-fs-submit-btn>Submit Enquiry</button>
+            <button type="submit" class="btn-submit" id="submit-btn" data-fs-submit-btn>Submit Enquiry</button>
           </div>
         </form>
-        <!-- Success message shown after submission -->
-        <div data-fs-success style="display:none; font-family:'EB Garamond',serif; font-style:italic; font-size:0.95rem; color:var(--navy); border-left:3px solid var(--navy); padding:0.75rem 1rem; background:var(--off-white); margin-top:0.5rem;">
-          Thank you. Your enquiry has been received. We will respond promptly and with full discretion.
+        <div data-fs-success style="display:none;font-family:'EB Garamond',serif;font-style:italic;font-size:0.95rem;color:var(--navy);border-left:3px solid var(--navy);padding:0.75rem 1rem;background:var(--off-white);margin-top:0.5rem;">
+          Enquiry sent. We will respond promptly and with full discretion.
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(el => io.observe(el));
+
+// Formspree Ajax — button shows "Sending…" immediately on submit, "Sent ✓" on success
+window.formspree = window.formspree || function() { (formspree.q = formspree.q || []).push(arguments); };
+formspree('initForm', {
+  formElement: '#tos-contact-form',
+  formId: 'xvzdrkpj',
+  onSubmit: function() {
+    var btn = document.getElementById('submit-btn');
+    if (btn) { btn.textContent = 'Sending\u2026'; btn.disabled = true; }
+  },
+  onSuccess: function() {
+    var btn = document.getElementById('submit-btn');
+    if (btn) { btn.textContent = 'Sent \u2713'; }
+  },
+  onError: function() {
+    var btn = document.getElementById('submit-btn');
+    if (btn) { btn.textContent = 'Submit Enquiry'; btn.disabled = false; }
+  }
+});
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 <!-- FOOTER -->
 <footer>
@@ -874,23 +905,5 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
     <p>All enquiries treated with strict confidentiality.</p>
   </div>
 </footer>
-
-<script>
-const reveals = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 60);
-      io.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.08 });
-reveals.forEach(el => io.observe(el));
-
-// Formspree Ajax initialisation
-window.formspree = window.formspree || function() { (formspree.q = formspree.q || []).push(arguments); };
-formspree('initForm', { formElement: '#tos-contact-form', formId: 'xvzdrkpj' });
-</script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
