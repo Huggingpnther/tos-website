@@ -118,16 +118,16 @@ nav {
 .hero-image-area { position: absolute; inset: 0; z-index: 0; }
 .hero-image-area img {
   width: 100%; height: 100%; object-fit: cover;
-  object-position: center; opacity: 0.28; display: block;
+  object-position: center 30%; opacity: 0.45; display: block;
 }
 
 .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(
     to right,
-    rgba(17,30,53,0.97) 0%,
-    rgba(17,30,53,0.88) 45%,
-    rgba(17,30,53,0.45) 100%
+    rgba(17,30,53,0.92) 0%,
+    rgba(17,30,53,0.80) 45%,
+    rgba(17,30,53,0.55) 100%
   );
 }
 
@@ -143,10 +143,12 @@ nav {
 }
 
 .hero-eagle-wrap {
-  text-align: center; padding: 2.5rem;
-  border: 1px solid rgba(184,150,12,0.2); display: inline-block;
+  overflow: hidden;
+  border: 1px solid rgba(184,150,12,0.15);
+  display: block;
+  line-height: 0;
 }
-.hero-eagle-wrap img { width: min(300px, 90%); height: auto; display: block; margin: 0 auto; }
+.hero-eagle-wrap img { width: 100%; height: auto; display: block; object-fit: cover; opacity: 0.92; }
 
 .hero-category {
   font-size: 10px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase;
@@ -248,7 +250,7 @@ nav {
 .about-body-text p { font-size: 0.97rem; color: var(--text-body); line-height: 1.9; margin-bottom: 1.2rem; }
 .about-body-text p:last-child { margin-bottom: 0; }
 .mission-block {
-  margin-top: 2.5rem; padding: 1.75rem 2rem;
+  margin-top: 0; padding: 1.75rem 2rem;
   border-left: 3px solid var(--navy); background: var(--white);
   border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
 }
@@ -304,18 +306,9 @@ nav {
 
 /* ─── GEOGRAPHY ─── */
 #geography { background: var(--navy-dark); }
-.geo-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: start; }
+.geo-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: center; }
 .geo-body { font-size: 0.97rem; color: rgba(255,255,255,0.6); line-height: 1.9; margin-top: 1.5rem; }
-.geo-regions-wrap { margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-.geo-region-item {
-  padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.07);
-  display: flex; align-items: center; gap: 0.85rem;
-}
-.geo-region-item:nth-child(odd) { padding-right: 1.5rem; }
-.geo-region-item:nth-child(even) { padding-left: 1.5rem; border-left: 1px solid rgba(255,255,255,0.07); }
-.geo-dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
-.geo-region-name { font-size: 0.85rem; color: rgba(255,255,255,0.75); }
-.geo-image-block { position: relative; overflow: hidden; background: var(--navy-dark); line-height: 0; }
+.geo-image-block { position: relative; overflow: hidden; background: var(--navy-dark); line-height: 0; border-radius: 2px; }
 .geo-image-block img { width: 100%; height: auto; display: block; opacity: 1; }
 .geo-image-block .geo-ph {
   width: 100%; height: 100%; background: var(--navy-mid);
@@ -413,7 +406,7 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
   max-width: 1160px; margin: 0 auto; padding: 3rem;
   display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem;
 }
-.footer-brand img { height: 36px; width: auto; margin-bottom: 1rem; opacity: 0.9; }
+.footer-brand img { height: 80px; width: auto; margin-bottom: 1rem; opacity: 0.85; }
 .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.8; max-width: 280px; }
 .footer-col-title { font-size: 10px; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 1.25rem; }
 .footer-col-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
@@ -501,20 +494,14 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
 <!-- HERO -->
 <section id="hero">
   <div class="hero-image-area">
-    <!--
-      HERO BACKGROUND PHOTO
-      Recommended: military operations room, command centre, or airfield/convoy aerial shot.
-      Format: landscape, minimum 1600px wide.
-      To add: replace this comment with <img src="your-photo.jpg" alt="">
-      The dark gradient overlay (.hero-overlay) will apply automatically.
-    -->
+    <img src="9079786.webp" alt="">
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-inner">
       <div class="hero-left">
         <div class="hero-eagle-wrap">
-          <img src="Imperial stamp.png" alt="Teut Operational Services">
+          <img src="9079786.webp" alt="Teut Operational Services">
         </div>
       </div>
       <div class="hero-right">
@@ -556,7 +543,7 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
   </div>
 
   <div class="product-cell">
-    <img src="43910ad6-b298-44c0-aad8-e664d473cbd4.jpeg" alt="Aviation & Unmanned Systems">
+    <img src="43910ad6-b298-44c0-aad8-e664d473cbd4.png" alt="Aviation & Unmanned Systems">
     <div class="product-cell-overlay">
       <p class="product-cell-title">Aviation &amp; Unmanned Systems</p>
       <span class="product-cell-sub">UAVs · Attack Drones · ISR · Fixed &amp; Rotary Wing</span>
@@ -610,13 +597,12 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
           <p>We operate as the procurement arm our clients need but do not always have the capacity to maintain in-house — managing supplier identification, qualification, documentation, and transaction execution from initial requirement through to confirmed delivery.</p>
           <p>Every engagement is built on a foundation of legal certainty and compliance. We do not advance an enquiry without the instruments in place to protect every party to the transaction — and we do not introduce a supplier without verifying they meet the standards our clients require.</p>
         </div>
+      </div>
+      <div class="reveal">
         <div class="mission-block">
           <blockquote>"To deliver reliable, compliant, and operationally effective procurement solutions — connecting government and institutional partners with verified global supply chains in the world's most demanding defence and security environments."</blockquote>
         </div>
-      </div>
-      <div class="reveal">
-        <img src="TOS eagle.png" alt="Teut Operational Services" class="about-seal">
-        <ul class="credentials-list">
+        <ul class="credentials-list" style="margin-top:0;">
           <li><span class="cred-dot"></span>Full-spectrum defence equipment sourcing capability</li>
           <li><span class="cred-dot"></span>Compliance and legal-instrument-led at every stage</li>
           <li><span class="cred-dot"></span>Vetted international supplier registry</li>
@@ -788,9 +774,6 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
         </div>
       </div>
       <div class="reveal">
-        <div id="form-sent" style="display:none; font-family:'EB Garamond',serif; font-style:italic; font-size:1.05rem; color:var(--navy); border-left:3px solid var(--navy); padding:1rem 1.25rem; background:var(--off-white); margin-bottom:1rem;">
-          Enquiry sent. We will respond promptly and with full discretion.
-        </div>
         <form id="tos-contact-form" class="contact-form">
           <div class="form-row">
             <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="first_name" placeholder="First name" required></div>
@@ -824,6 +807,9 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
           </div>
           <div id="form-error" style="display:none; font-family:'EB Garamond',serif; font-style:italic; font-size:0.9rem; color:#8B1A1A; border-left:3px solid #8B1A1A; padding:0.75rem 1rem; background:#FDF5F5; margin-top:0.5rem;"></div>
         </form>
+        <div id="form-sent" style="display:none; font-family:'EB Garamond',serif; font-style:italic; font-size:1.05rem; color:var(--navy); border-left:3px solid var(--navy); padding:1rem 1.25rem; background:var(--off-white); margin-top:0.5rem;">
+          Enquiry sent. We will respond promptly and with full discretion.
+        </div>
       </div>
     </div>
   </div>
@@ -833,7 +819,7 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
-      <img src="TOS eagle.png" alt="TOS">
+      <img src="Imperial stamp.png" alt="TOS">
       <p>Specialist government defence procurement partner. Connecting ministries and institutional clients with verified global supply chains.</p>
     </div>
     <div>
@@ -869,11 +855,9 @@ document.getElementById('tos-contact-form').addEventListener('submit', async fun
   var btn = document.getElementById('submit-btn');
   var sentEl = document.getElementById('form-sent');
   var errorEl = document.getElementById('form-error');
-
   btn.textContent = 'Sending\u2026';
   btn.disabled = true;
   errorEl.style.display = 'none';
-
   try {
     var response = await fetch('https://formspree.io/f/xvzdrkpj', {
       method: 'POST',
