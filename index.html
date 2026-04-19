@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Teut Operational Services — Defence &amp; Security Consultancy</title>
+<link rel="icon" type="image/png" href="Gemini eagle 1.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
@@ -118,16 +119,17 @@ nav {
 .hero-image-area { position: absolute; inset: 0; z-index: 0; }
 .hero-image-area img {
   width: 100%; height: 100%; object-fit: cover;
-  object-position: center 30%; opacity: 0.45; display: block;
+  object-position: center 30%; opacity: 0.65; display: block;
 }
 
 .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(
     to right,
-    rgba(17,30,53,0.92) 0%,
-    rgba(17,30,53,0.80) 45%,
-    rgba(17,30,53,0.55) 100%
+    rgba(17,30,53,0.95) 0%,
+    rgba(17,30,53,0.85) 40%,
+    rgba(17,30,53,0.35) 70%,
+    rgba(17,30,53,0.15) 100%
   );
 }
 
@@ -139,7 +141,7 @@ nav {
 
 .hero-inner {
   max-width: 1160px; margin: 0 auto; padding: 0 3rem;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  display: flex; align-items: center;
 }
 
 .hero-eagle-wrap {
@@ -306,7 +308,7 @@ nav {
 
 /* ─── GEOGRAPHY ─── */
 #geography { background: var(--navy-dark); }
-.geo-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: center; }
+.geo-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 3.5rem; align-items: center; }
 .geo-body { font-size: 0.97rem; color: rgba(255,255,255,0.6); line-height: 1.9; margin-top: 1.5rem; }
 .geo-image-block { position: relative; overflow: hidden; background: var(--navy-dark); line-height: 0; border-radius: 2px; }
 .geo-image-block img { width: 100%; height: auto; display: block; opacity: 1; }
@@ -499,12 +501,7 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-inner">
-      <div class="hero-left">
-        <div class="hero-eagle-wrap">
-          <img src="9079786.webp" alt="Teut Operational Services">
-        </div>
-      </div>
-      <div class="hero-right">
+      <div class="hero-right" style="max-width:520px;">
         <p class="hero-category">Teut Operational Services</p>
         <h1 class="hero-title">Defence &amp; Security Procurement Solutions</h1>
         <p class="hero-body">TOS is a specialist government procurement partner — connecting defence ministries and institutional clients with verified global supply chains for the full spectrum of defence and security equipment requirements.</p>
@@ -598,11 +595,11 @@ footer { background: var(--navy-dark); border-top: 1px solid rgba(184,150,12,0.2
           <p>Every engagement is built on a foundation of legal certainty and compliance. We do not advance an enquiry without the instruments in place to protect every party to the transaction — and we do not introduce a supplier without verifying they meet the standards our clients require.</p>
         </div>
       </div>
-      <div class="reveal">
+      <div class="reveal" style="padding-top:2.8rem;">
         <div class="mission-block">
           <blockquote>"To deliver reliable, compliant, and operationally effective procurement solutions — connecting government and institutional partners with verified global supply chains in the world's most demanding defence and security environments."</blockquote>
         </div>
-        <ul class="credentials-list" style="margin-top:0;">
+        <ul class="credentials-list" style="margin-top:2rem;">
           <li><span class="cred-dot"></span>Full-spectrum defence equipment sourcing capability</li>
           <li><span class="cred-dot"></span>Compliance and legal-instrument-led at every stage</li>
           <li><span class="cred-dot"></span>Vetted international supplier registry</li>
